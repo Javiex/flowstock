@@ -1,0 +1,26 @@
+[15-Sep-2016 10:18:16 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:18:16 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:37:56 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:39:31 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:45:24 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:45:27 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:45:28 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:45:40 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:45:52 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:45:57 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:46:50 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:46:52 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:47:25 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:47:25 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:47:33 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:47:33 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:47:56 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:48:27 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:48:39 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:49:43 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:49:55 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:51:40 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:51:40 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:51:44 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[15-Sep-2016 10:52:08 America/Chicago] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/addetectaauditor/public_html/libs/functions.php on line 10
+[22-Sep-2016 11:58:12 America/Chicago] PHP Fatal error:  Cannot use object of type stdClass as array in /home/addetectaauditor/public_html/api/routes.php on line 72

@@ -1,0 +1,5 @@
+/flowstock/node_modules
+/flowstock/dist
+/flowstock/.tmp
+/flowstock/.sass-cache
+/flowstock/bower_components

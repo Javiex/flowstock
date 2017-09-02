@@ -1,0 +1,62 @@
+.noPad {
+  padding: 0px;
+}
+
+.navbar-default {
+  background-color: #222;
+  /*background-color: lightblue;*/
+}
+
+#side-menu a {
+  color: #fff;
+}
+
+#side-menu li a:hover, #side-menu li a:focus {
+  color: #222;
+  background-color: #fff;
+}
+
+.borderField {
+  padding: .35em .625em .75em !important;
+  margin: 0 2px !important;
+  border: 1px solid #c0c0c0 !important;
+}
+
+.headerField {
+  background-color: lightblue;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+thead {
+  background: lightblue;
+}
+
+thead>tr>th {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+tbody {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+div#addProduct label {
+  float: left;
+  /*width: 33.33333333%;*/
+  width: 100px;
+  max-width: 100px;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-transform: uppercase;
+}
+
+div#addProduct select, div#addProduct button, div#addProduct input {
+  text-transform: uppercase;
+}
+
+div#addProduct form>div.form-group div.col-xs-8 {
+  width:calc( 100% - 100px);
+}

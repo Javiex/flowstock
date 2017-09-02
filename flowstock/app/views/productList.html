@@ -1,0 +1,146 @@
+<div class="">
+  <div class="page-title">
+    <div class="text-left">
+      <h1>Modulo de Productos</h1>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+
+  <fieldset class="borderField">
+    <legend>Lista de productos</legend>
+
+    <div class="container-fluid headerField">
+      <div class="col-sm-8 searchField">
+        <label for="search">Buscar:</label>
+        <input type="text" ng-model="search" />
+        <!-- <input type="text" ng-model="query[queryBy]" /> -->
+        <i class="glyphicon glyphicon-search"></i>
+
+        <!-- <select class="" ng-model="queryBy">
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+        </select> -->
+      </div>
+      <div class="text-right col-sm-4 optionField">
+        <button type="button" name="agregarProducto" class="btn btn-primary" data-toggle="modal" data-target="#addProduct"><i class="glyphicon glyphicon-plus"></i> Nuevo Producto</button>
+      </div>
+    </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Linea</th>
+          <th>Familia</th>
+          <th>Codigo</th>
+          <th>Descripcion</th>
+          <th>U.M.</th>
+          <th>GENERO</th>
+          <th>MARCA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="productosAll.length == 0" class="even pointer">
+          <td colspan="7"> No hay productos registrados</td>
+        </tr>
+        <tr ng-repeat = "producto in productosAll | filter:search track by $index " class="" data-toggle="modal">
+          <td>{{producto.name_line}}</td>
+          <td>{{producto.name_family}}</td>
+          <td>{{producto.code_product}}</td>
+          <td>{{producto.description_product}}</td>
+          <td>{{producto.code_unit}}</td>
+          <td>{{producto.gender}}</td>
+          <td>{{producto.name_brand}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </fieldset>
+
+</div>
+
+<div class="modal" id="addProduct">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h3 class="modal-title text-center">Nuevo Producto</h3>
+      </div>
+      <div class="modal-body">
+        <form id="nProduct" class="form-horizontal form-label-left" ng-submit="saveProduct()">
+
+            <div class="form-group">
+              <label class="col-xs-4" for="linea">Linea:</label>
+              <div class="col-xs-8">
+                <select ng-model="linea"
+                class="form-control"
+                ng-options="item.name_line for item in lineAll track by item.code_line"
+                required="required">
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-xs-4" for="familia">Familia:</label>
+              <div class="col-xs-8">
+                <select ng-model="familia" class="form-control" ng-options="item.name_family for item in familyAll track by item.code_family"
+                required="required">
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-6 noPad">
+                <label for="gender">Genero:</label>
+                <div class="col-xs-8">
+                  <select ng-model="gender" class="form-control" ng-options="item.name_gender for item in genderAll track by item.id_gender"
+                  required="required">
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6 noPad">
+                <label for="um">Medida:</label>
+                <div class="col-xs-8">
+                  <select ng-model="um" class="form-control"
+                  ng-options="item.name_unit for item in unitAll track by item.id_unit"
+                  required="required">
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="description">Producto:</label>
+              <div class="col-xs-8">
+                <input ng-model="description" class="form-control" type="text" required="required">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="brand">Marca:</label>
+              <div class="col-xs-8">
+                <select ng-model="brand" class="form-control" ng-options="item.name_brand for item in brandAll track by item.code_brand"
+                required="required">
+                </select>
+
+              </div>
+            </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success ladda-button"
+          ladda="submitting"
+          data-style="expand-right"
+          data-spinner-size="20"
+          type="submit"
+          form="nProduct">Guardar
+       </button>
+        <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+
+      </div>
+    </div>
+  </div>
+</div>
