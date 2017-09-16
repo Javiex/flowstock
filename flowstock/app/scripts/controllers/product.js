@@ -8,7 +8,7 @@
  * Controller of the flowstockApp
  */
 angular.module('flowstockApp')
-  .controller('ProductCtrl', function ($scope, sProductos, $state) {
+  .controller('ProductCtrl', function ($scope, sProductos) {
 
     // this.awesomeThings = [
     //   'HTML5 Boilerplate',
@@ -17,6 +17,8 @@ angular.module('flowstockApp')
     // ];
 
     $scope.submitting = false;
+    $scope.prodDetail = true;
+    $scope.prodBtn = true;
     $scope.nuevoProducto= {};
     $scope.nuevoProducto.linea = [];
     $scope.nuevoProducto.familia = [];
@@ -58,12 +60,19 @@ angular.module('flowstockApp')
       sProductos.addProduct($scope.nuevoProducto).then(function(res){
         if(res.error){
           $scope.submitting = false;
-          alert("No guardo");
+          $scope.prodDetail = false;
+          $scope.prodBtn = true;
         }else {
           $scope.submitting = false;
+          $scope.prodDetail = true;
+          $scope.prodBtn = false;
+          $scope.idProduct = res;
+
+          sProductos.listModel().then(function(response){
+            $scope.modelAll = response;
+          });
         // $state.go("product");
-          // alert("Guardado");
-          document.getElementById('nProduct').reset();
+          // document.getElementById('nProduct').reset();
           $("#addProduct").modal('hide');
         }
       });

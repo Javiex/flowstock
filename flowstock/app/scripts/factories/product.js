@@ -27,6 +27,15 @@
           return p;
         };
 
+        Product.listModel = function(){
+          var url = sApi.listModel();
+          var p = $http.get(url);
+          p = p.then(function (res) {
+              return res.data;
+          });
+          return p;
+        };
+
         Product.listFamily = function() {
           var url = sApi.listFamily();
           var p = $http.get(url);

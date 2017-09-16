@@ -30,6 +30,13 @@
         templateUrl: 'views/productList.html',
         controller: 'ProductCtrl',
         controllerAs: 'product'
+      })
+      .state('productCreate', {
+        url: '/product/create',
+        templateUrl: 'views/productCreate.html',
+        controller: 'ProductCtrl',
+        controllerAs: 'productCreate'
       });
-  })
+
+  });
 }());

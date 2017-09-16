@@ -1,0 +1,121 @@
+<div class="">
+
+  <div class="page-title">
+    <div class="text-left">
+      <h1>Productos > Nuevo Producto</h1>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div id="addProduct" class="productHeader">
+    <fieldset class="borderField">
+      <legend>Nuevo Producto</legend>
+      <form id="nProduct" class="form-horizontal form-label-left" ng-submit="saveProduct()">
+
+          <div class="form-group">
+            <label class="col-xs-4" for="linea">Linea:</label>
+            <div class="col-xs-8">
+              <select ng-model="linea"
+              class="form-control"
+              ng-options="item.name_line for item in lineAll track by item.code_line"
+              required="required">
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-xs-4" for="familia">Familia:</label>
+            <div class="col-xs-8">
+              <select ng-model="familia" class="form-control" ng-options="item.name_family for item in familyAll track by item.code_family"
+              required="required">
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-6 noPad">
+              <label for="gender">Genero:</label>
+              <div class="col-xs-8">
+                <select ng-model="gender" class="form-control" ng-options="item.name_gender for item in genderAll track by item.id_gender"
+                required="required">
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6 noPad">
+              <label for="um">Medida:</label>
+              <div class="col-xs-8">
+                <select ng-model="um" class="form-control"
+                ng-options="item.name_unit for item in unitAll track by item.id_unit"
+                required="required">
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="description">Producto:</label>
+            <div class="col-xs-8">
+              <input ng-model="description" class="form-control" type="text" required="required">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="brand">Marca:</label>
+            <div class="col-xs-8">
+              <select ng-model="brand" class="form-control" ng-options="item.name_brand for item in brandAll track by item.code_brand"
+              required="required">
+              </select>
+
+            </div>
+          </div>
+
+      </form>
+
+      <div class="" ng-if="prodBtn">
+        <button class="btn btn-success ladda-button"
+          ladda="submitting"
+          data-style="expand-right"
+          data-spinner-size="20"
+          type="submit"
+          form="nProduct">Guardar
+       </button>
+        <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+
+      </div>
+
+    </fieldset>
+  </div>
+  <div class="productBody" ng-if="prodDetail">
+    <fieldset class="borderField">
+      <legend>Detalle del producto {{idProduct}}</legend>
+      <form id="nProductDetail" class="form-horizontal form-label-left" ng-submit="saveDetailProduct()">
+        <input type="hidden" ng-model="idProductRegister" value="{{idProduct}}">
+        <div class="form-group">
+          <div class="col-sm-6 noPad">
+            <label for="fabrication">Material:</label>
+            <div class="content-material col-xs-8">
+              <select class="form-control" ng-model="fabrication"
+              ng-options="item.name_model for item in modelAll track by item.id_model"
+              required="required">
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-6 noPad">
+            <label for="oldCode">Codigo:</label>
+            <div class="content-material col-xs-8">
+              <input type="text" class="form-control" ng-model="oldCode">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Tallas:</label>
+          <input type="checkbox" ng-model="tallas[]" value="">
+          <input type="checkbox" ng-model="tallas[]" value="">
+          <input type="checkbox" ng-model="tallas[]" value="">
+        </div>
+        {{tallas[1]}}
+      </form>
+    </fieldset>
+  </div>
+
+</div>

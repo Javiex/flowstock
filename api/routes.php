@@ -40,7 +40,7 @@ $app->post("/product", function() use($app){
 		//agregar el codigo del producto;
 		$code .= $producto_id;
 		$oProductos->updateCodeProduct($code, $producto_id);
-		
+
 	} catch (Exception $e) {
 		echoResponse($e->getMessage());
 	}
@@ -56,6 +56,12 @@ $app->post("/product", function() use($app){
 $app->get("/lines", function() use($app){
 	$oLine = new Line();
 	$response = $oLine->getLines();
+	echoResponse($response);
+});
+
+$app->get("/models", function() use($app){
+	$oModel = new Model();
+	$response = $oModel->getModels();
 	echoResponse($response);
 });
 

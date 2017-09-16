@@ -16,6 +16,17 @@
   background-color: #fff;
 }
 
+.page-title {
+    background-color: #333;
+    color: #fff;
+}
+
+.page-title h1 {
+  font-size: 30px;
+  font-family: monospace;
+  padding: 7px;
+}
+
 .borderField {
   padding: .35em .625em .75em !important;
   margin: 0 2px !important;
@@ -41,7 +52,7 @@ tbody {
   text-align: center;
 }
 
-div#addProduct label {
+div#addProduct label, div.productBody label {
   float: left;
   /*width: 33.33333333%;*/
   width: 100px;
@@ -53,10 +64,22 @@ div#addProduct label {
   text-transform: uppercase;
 }
 
-div#addProduct select, div#addProduct button, div#addProduct input {
+div#addProduct select,  div.productBody select, div#addProduct button,  div.productBody button, div#addProduct input,  div.productBody input {
   text-transform: uppercase;
 }
 
-div#addProduct form>div.form-group div.col-xs-8 {
+div#addProduct form>div.form-group div.col-xs-8,
+div.content-material {
   width:calc( 100% - 100px);
+}
+
+.productHeader {
+  max-width: 700px;
+  margin: auto;
+}
+
+.productBody {
+  margin-top: 15px !important;
+  max-width: 700px;
+  margin:auto;
 }

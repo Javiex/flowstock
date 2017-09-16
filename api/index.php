@@ -21,6 +21,7 @@ require_once($main_path.'/api/config/config.php');
 // require_once($main_path.'/api/model/periodo.php');
 // require_once($main_path.'/api/model/incidente.php');
 require_once($main_path.'/api/model/line.php');
+require_once($main_path.'/api/model/model.php');
 require_once($main_path.'/api/model/family.php');
 require_once($main_path.'/api/model/gender.php');
 require_once($main_path.'/api/model/unit.php');

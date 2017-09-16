@@ -36,7 +36,11 @@
 
       this.listBrand = function() {
         return this.api_url() + '/brands';
-      }
+      };
+
+      this.listModel = function() {
+        return this.api_url() + '/models';
+      };
 
     });
 }());
