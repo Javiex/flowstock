@@ -26,6 +26,8 @@ require_once($main_path.'/api/model/family.php');
 require_once($main_path.'/api/model/gender.php');
 require_once($main_path.'/api/model/unit.php');
 require_once($main_path.'/api/model/brand.php');
+require_once($main_path.'/api/model/size.php');
+require_once($main_path.'/api/model/color.php');
 require_once($main_path.'/api/model/product.php');
 require_once($main_path.'/api/routes.php');
 

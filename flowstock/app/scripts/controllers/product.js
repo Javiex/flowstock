@@ -19,13 +19,21 @@ angular.module('flowstockApp')
     $scope.submitting = false;
     $scope.prodDetail = true;
     $scope.prodBtn = true;
-    $scope.nuevoProducto= {};
+    $scope.nuevoProducto = {};
     $scope.nuevoProducto.linea = [];
     $scope.nuevoProducto.familia = [];
     $scope.nuevoProducto.gender = [];
     $scope.nuevoProducto.um = [];
     $scope.nuevoProducto.description = [];
     $scope.nuevoProducto.brand = [];
+
+    $scope.detail = {};
+    $scope.size = {};
+    $scope.color = {};
+    // $scope.detail.fabrication = [];
+    $scope.detail.oldCode = "";
+    $scope.detail.sizes = [];
+    $scope.detail.colors = [];
 
     $scope.init = function(){
       sProductos.listProduct().then(function(response){
@@ -46,6 +54,21 @@ angular.module('flowstockApp')
       sProductos.listBrand().then(function(response){
         $scope.brandAll = response;
       });
+
+      //test
+      sProductos.listModel().then(function(response){
+        $scope.modelAll = response;
+      });
+      sProductos.listBabySize().then(function(response){
+        $scope.babySizeAll = response;
+      });
+      sProductos.listChildSize().then(function(response){
+        $scope.childSizeAll = response;
+      });
+      sProductos.listColor().then(function(response){
+        $scope.colorAll = response;
+      });
+      //fin test
     };
 
     $scope.saveProduct = function(){
@@ -71,20 +94,32 @@ angular.module('flowstockApp')
           sProductos.listModel().then(function(response){
             $scope.modelAll = response;
           });
+          sProductos.listBabySize().then(function(response){
+            $scope.babySizeAll = response;
+          });
+          sProductos.listChildSize().then(function(response){
+            $scope.childSizeAll = response;
+          });
+
+          sProductos.listColor().then(function(response){
+            $scope.colorAll = response;
+          });
         // $state.go("product");
           // document.getElementById('nProduct').reset();
-          $("#addProduct").modal('hide');
+
+
+          // $("#addProduct").modal('hide');
         }
       });
-      // alert($scope.nuevoProducto);
       console.log($scope.nuevoProducto);
     };
-    // function saveProduct()
+
+    $scope.saveDetailProduct = function() {
+      console.log($scope.detail);
+    };
+
+
+
 
     $scope.init();
-
-    // sElementos.listarIncidencias().then(function(response){
-    //   $scope.incidenciasAll = response;
-    // });
-
   });

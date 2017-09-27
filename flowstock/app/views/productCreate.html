@@ -89,16 +89,18 @@
     <fieldset class="borderField">
       <legend>Detalle del producto {{idProduct}}</legend>
       <form id="nProductDetail" class="form-horizontal form-label-left" ng-submit="saveDetailProduct()">
-        <input type="hidden" ng-model="idProductRegister" value="{{idProduct}}">
+        <input type="hidden" ng-model="idProductRegister" value="{{idProduct}}"/>
         <div class="form-group">
           <div class="col-sm-6 noPad">
             <label for="fabrication">Material:</label>
             <div class="content-material col-xs-8">
-              <select class="form-control" ng-model="fabrication"
+              <select class="form-control" ng-model="detail.fabrication"
               ng-options="item.name_model for item in modelAll track by item.id_model"
               required="required">
               </select>
             </div>
+            {{fabrication}}
+
           </div>
           <div class="col-sm-6 noPad">
             <label for="oldCode">Codigo:</label>
@@ -107,13 +109,59 @@
             </div>
           </div>
         </div>
+
         <div class="form-group">
-          <label for="">Tallas:</label>
-          <input type="checkbox" ng-model="tallas[]" value="">
-          <input type="checkbox" ng-model="tallas[]" value="">
-          <input type="checkbox" ng-model="tallas[]" value="">
+          <div class="col-sm-6 noPad">
+            <label class="control-label">BB:</label>
+            <div class="content-material col-xs-8">
+              <ui-select ng-model="size.babySelected" multiple theme="selectize" title="Selecciona talla BB">
+                <ui-select-match placeholder="Seleccionar Tallas">{{$item.code_size}}</ui-select-match>
+                <ui-select-choices repeat="item in babySizeAll | filter: $select.search">
+                  <div ng-bind-html="item.code_size | highlight: $select.search"></div>
+                  <small ng-bind-html="item.name_size | highlight: $select.search"></small>
+                </ui-select-choices>
+              </ui-select>
+            </div>
+          </div>
+          <div class="col-sm-6 noPad">
+            <label class="control-label">NIÑO:</label>
+            <div class="content-material col-xs-8">
+              <ui-select ng-model="size.childSelected" multiple theme="selectize" title="Selecciona talla niño">
+                <ui-select-match placeholder="Seleccionar Tallas">{{$item.code_size}}</ui-select-match>
+                <ui-select-choices repeat="item in childSizeAll | filter: $select.search">
+                  <div ng-bind-html="item.code_size | highlight: $select.search"></div>
+                  <small ng-bind-html="item.name_size | highlight: $select.search"></small>
+                </ui-select-choices>
+              </ui-select>
+            </div>
+          </div>
         </div>
-        {{tallas[1]}}
+
+        <div class="form-group">
+          <label class="control-label">COLORES:</label>
+          <div class="content-material col-xs-8">
+            <ui-select ng-model="color.selected" multiple theme="selectize" title="Selecciona colores">
+              <ui-select-match placeholder="Seleccionar colores">{{$item.code_color}}</ui-select-match>
+              <ui-select-choices repeat="item in colorAll | filter: $select.search">
+                <div ng-bind-html="item.code_color | highlight: $select.search"></div>
+                <small ng-bind-html="item.name_color | highlight: $select.search"></small>
+              </ui-select-choices>
+            </ui-select>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn btn-success ladda-button"
+            ladda="submitting"
+            data-style="expand-right"
+            data-spinner-size="20"
+            type="submit"
+            form="nProductDetail">Guardar
+         </button>
+          <button class="btn btn-danger" type="button">Cancelar</button>
+
+        </div>
+
       </form>
     </fieldset>
   </div>

@@ -42,5 +42,17 @@
         return this.api_url() + '/models';
       };
 
+      this.listBabySize = function() {
+        return this.api_url() + '/Babysizes';
+      };
+
+      this.listChildSize = function() {
+        return this.api_url() + '/Childsizes';
+      };
+
+      this.listColor = function() {
+        return this.api_url() + '/colors';
+      };
+
     });
 }());

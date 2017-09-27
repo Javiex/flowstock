@@ -52,6 +52,13 @@ tbody {
   text-align: center;
 }
 
+button#agregarProducto a, button#agregarProducto a:hover, button#agregarProducto a:focus  {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 div#addProduct label, div.productBody label {
   float: left;
   /*width: 33.33333333%;*/

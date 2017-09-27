@@ -81,6 +81,33 @@
           });
         };
 
+        Product.listBabySize = function() {
+          var url = sApi.listBabySize();
+          var p = $http.get(url);
+          p = p.then(function(res){
+            return res.data;
+          });
+          return p;
+        };
+
+        Product.listChildSize = function() {
+          var url = sApi.listChildSize();
+          var p = $http.get(url);
+          p = p.then(function(res){
+            return res.data;
+          });
+          return p;
+        };
+
+        Product.listColor = function() {
+          var url = sApi.listColor();
+          var p = $http.get(url);
+          p = p.then(function(res){
+            return res.data;
+          });
+          return p;
+        };
+
 
         return Product;
       });

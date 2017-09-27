@@ -19,6 +19,7 @@ angular
     'ngTouch',
     'ui.router',
     'jcs-autoValidate',
-    'angular-ladda'
+    'angular-ladda',
+    'ui.select'
   ]);
 }());

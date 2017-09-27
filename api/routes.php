@@ -89,4 +89,22 @@ $app->get("/brands", function() use($app){
 	echoResponse($response);
 });
 
+$app->get("/Babysizes", function() use($app){
+	$oSize = new Size();
+	$response = $oSize->getBabySizes();
+	echoResponse($response);
+});
+
+$app->get("/Childsizes", function() use($app){
+	$oSize = new Size();
+	$response = $oSize->getChildSizes();
+	echoResponse($response);
+});
+
+$app->get("/colors", function() use($app){
+	$oColor = new Color();
+	$response = $oColor->getColors();
+	echoResponse($response);
+})
+
 ?>
