@@ -105,6 +105,51 @@ $app->get("/colors", function() use($app){
 	$oColor = new Color();
 	$response = $oColor->getColors();
 	echoResponse($response);
-})
+});
+
+$app->post("/productDetail", function() use($app){
+	try {
+		$oProductos = new Product();
+
+		$todo = $app->request->getBody();
+		$todo = json_decode($todo);
+
+		$idProduct = $todo->idProduct;
+		$oldCode = "";
+		$model = $todo->fabrication->id_model;
+		$colores="";
+		$tallas="";
+
+		if(isset($todo->oldCode)){
+			$oldCode = $todo->oldCode;
+		}
+
+		if(count($todo->color)){
+			foreach ($todo->color as $colors ) {
+				$colores.=$colors->id_color.",";
+			}
+			$colores = rtrim($colores, ',');
+		}
+
+		if (count($todo->sizeBaby)) {
+			foreach ($todo->sizeBaby as $sizes) {
+				$tallas.=$sizes->id_size.",";
+			}
+		}
+
+		if(count($todo->sizeChild)) {
+			foreach ($todo->sizeChild as $sizes) {
+				$tallas.=$sizes->id_size.",";
+			}
+			$tallas = rtrim($tallas,',');
+		}
+
+		$oProductos->setProductDetail($idProduct, $model, $colores, $tallas, $oldCode);
+
+	} catch (Exception $e) {
+		echoResponse($e->getMessage());
+	}
+
+});
 
 ?>

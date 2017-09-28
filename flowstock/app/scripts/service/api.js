@@ -18,6 +18,10 @@
         return this.api_url() + '/product';
       };
 
+      this.addProductDetail = function(){
+        return this.api_url() + '/productDetail';
+      };
+
       this.listLine = function(){
         return this.api_url() + '/lines';
       };

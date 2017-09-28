@@ -64,29 +64,15 @@ class Product {
     $response= getData($query, 'all');
     return $response;
   }
-  //register
-  public function setProductDetail(){
-    $query="INSERT INTO `product_detail`(
-      `id_productDetail`,
-      `id_product`,
-      `model`,
-      `color`,
-      `size`,
-      `sku`)
-      VALUES (
-        NULL,
-        $id_product,
-        $model,
-        $color,
-        $size,
-        $sku)";
 
-        $id = postData($query, 'insert');
-        return $id;
-        // $con= getConnection();
-        // $dbh= $con->prepare($query);
-        // $dbh->execute();
-      }
+  //register
+  public function setProductDetail($id_product, $model, $color, $size, $oldCode){
+    $query="INSERT INTO `product_detail` VALUES (NULL,?,?,?,?,?)";
+
+    $params = [$id_product, $model, $color, $size, $oldCode];
+    $id = newPostData($query, $params, "insert");
+    return $id;
+  }
 
     }
     ?>

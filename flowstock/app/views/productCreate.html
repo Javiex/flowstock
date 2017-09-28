@@ -87,12 +87,12 @@
   </div>
   <div class="productBody" ng-if="prodDetail">
     <fieldset class="borderField">
-      <legend>Detalle del producto {{idProduct}}</legend>
+      <legend>Detalle del producto {{detail.idProduct}}</legend>
       <form id="nProductDetail" class="form-horizontal form-label-left" ng-submit="saveDetailProduct()">
-        <input type="hidden" ng-model="idProductRegister" value="{{idProduct}}"/>
+
         <div class="form-group">
           <div class="col-sm-6 noPad">
-            <label for="fabrication">Material:</label>
+            <label for="detail.fabrication">Material:</label>
             <div class="content-material col-xs-8">
               <select class="form-control" ng-model="detail.fabrication"
               ng-options="item.name_model for item in modelAll track by item.id_model"
@@ -103,9 +103,9 @@
 
           </div>
           <div class="col-sm-6 noPad">
-            <label for="oldCode">Codigo:</label>
+            <label for="detail.oldCode">Codigo:</label>
             <div class="content-material col-xs-8">
-              <input type="text" class="form-control" ng-model="oldCode">
+              <input type="text" class="form-control" ng-model="detail.oldCode">
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@
           <div class="col-sm-6 noPad">
             <label class="control-label">BB:</label>
             <div class="content-material col-xs-8">
-              <ui-select ng-model="size.babySelected" multiple theme="selectize" title="Selecciona talla BB">
+              <ui-select ng-model="detail.sizeBaby" multiple theme="selectize" title="Selecciona talla BB">
                 <ui-select-match placeholder="Seleccionar Tallas">{{$item.code_size}}</ui-select-match>
                 <ui-select-choices repeat="item in babySizeAll | filter: $select.search">
                   <div ng-bind-html="item.code_size | highlight: $select.search"></div>
@@ -126,7 +126,7 @@
           <div class="col-sm-6 noPad">
             <label class="control-label">NIÑO:</label>
             <div class="content-material col-xs-8">
-              <ui-select ng-model="size.childSelected" multiple theme="selectize" title="Selecciona talla niño">
+              <ui-select ng-model="detail.sizeChild" multiple theme="selectize" title="Selecciona talla niño">
                 <ui-select-match placeholder="Seleccionar Tallas">{{$item.code_size}}</ui-select-match>
                 <ui-select-choices repeat="item in childSizeAll | filter: $select.search">
                   <div ng-bind-html="item.code_size | highlight: $select.search"></div>
@@ -140,7 +140,7 @@
         <div class="form-group">
           <label class="control-label">COLORES:</label>
           <div class="content-material col-xs-8">
-            <ui-select ng-model="color.selected" multiple theme="selectize" title="Selecciona colores">
+            <ui-select ng-model="detail.color" multiple theme="selectize" title="Selecciona colores">
               <ui-select-match placeholder="Seleccionar colores">{{$item.code_color}}</ui-select-match>
               <ui-select-choices repeat="item in colorAll | filter: $select.search">
                 <div ng-bind-html="item.code_color | highlight: $select.search"></div>

@@ -8,7 +8,7 @@
  * Controller of the flowstockApp
  */
 angular.module('flowstockApp')
-  .controller('ProductCtrl', function ($scope, sProductos) {
+  .controller('ProductCtrl', function ($scope, $state, sProductos) {
 
     // this.awesomeThings = [
     //   'HTML5 Boilerplate',
@@ -17,7 +17,7 @@ angular.module('flowstockApp')
     // ];
 
     $scope.submitting = false;
-    $scope.prodDetail = true;
+    $scope.prodDetail = false;
     $scope.prodBtn = true;
     $scope.nuevoProducto = {};
     $scope.nuevoProducto.linea = [];
@@ -28,12 +28,6 @@ angular.module('flowstockApp')
     $scope.nuevoProducto.brand = [];
 
     $scope.detail = {};
-    $scope.size = {};
-    $scope.color = {};
-    // $scope.detail.fabrication = [];
-    $scope.detail.oldCode = "";
-    $scope.detail.sizes = [];
-    $scope.detail.colors = [];
 
     $scope.init = function(){
       sProductos.listProduct().then(function(response){
@@ -55,20 +49,6 @@ angular.module('flowstockApp')
         $scope.brandAll = response;
       });
 
-      //test
-      sProductos.listModel().then(function(response){
-        $scope.modelAll = response;
-      });
-      sProductos.listBabySize().then(function(response){
-        $scope.babySizeAll = response;
-      });
-      sProductos.listChildSize().then(function(response){
-        $scope.childSizeAll = response;
-      });
-      sProductos.listColor().then(function(response){
-        $scope.colorAll = response;
-      });
-      //fin test
     };
 
     $scope.saveProduct = function(){
@@ -89,7 +69,7 @@ angular.module('flowstockApp')
           $scope.submitting = false;
           $scope.prodDetail = true;
           $scope.prodBtn = false;
-          $scope.idProduct = res;
+          $scope.detail.idProduct = res;
 
           sProductos.listModel().then(function(response){
             $scope.modelAll = response;
@@ -104,17 +84,21 @@ angular.module('flowstockApp')
           sProductos.listColor().then(function(response){
             $scope.colorAll = response;
           });
-        // $state.go("product");
-          // document.getElementById('nProduct').reset();
-
-
-          // $("#addProduct").modal('hide');
         }
       });
       console.log($scope.nuevoProducto);
     };
 
     $scope.saveDetailProduct = function() {
+      $scope.submitting = true;
+      sProductos.addProductDetail($scope.detail).then(function(res){
+        if (res.error) {
+          $scope.submitting = false;
+        }else {
+          $scope.submitting = false;
+          $state.go("product");
+        }
+      });
       console.log($scope.detail);
     };
 

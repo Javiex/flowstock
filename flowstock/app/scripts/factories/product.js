@@ -81,6 +81,15 @@
           });
         };
 
+        Product.addProductDetail = function(params){
+          var url = sApi.addProductDetail();
+          return $http.post(url,params).then(function(res){
+            return res.data;
+          },function(res){
+            return {error:res.status};
+          });
+        };
+
         Product.listBabySize = function() {
           var url = sApi.listBabySize();
           var p = $http.get(url);
