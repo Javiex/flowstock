@@ -1,0 +1,92 @@
+<div class="">
+  <div class="page-title">
+    <div class="text-left">
+      <h1>Modulo de Colores</h1>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+
+  <fieldset class="borderField">
+    <legend>Lista de Colores</legend>
+
+    <div class="container-fluid headerField">
+      <div class="col-sm-8 searchField">
+        <label for="search">Buscar:</label>
+        <input type="text" ng-model="search" />
+        <i class="glyphicon glyphicon-search"></i>
+
+      </div>
+      <div class="text-right col-sm-4 optionField">
+
+        <button type="button" name="agregarColor" class="btn btn-primary" data-toggle="modal" data-target="#addColor"><i class="glyphicon glyphicon-plus"></i> Nuevo Color</button>
+      </div>
+    </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>codigo</th>
+          <th>Color</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="colorAll.length == 0" class="even pointer">
+          <td colspan="7"> No hay colores registrados</td>
+        </tr>
+        <tr ng-repeat = "color in colorAll | filter:search track by $index " class="" data-toggle="modal">
+          <td>{{color.id_color}}</td>
+          <td>{{color.code_color}}</td>
+          <td>{{color.name_color}}</td>
+          <td>editar</td>
+          <td>eliminar</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </fieldset>
+
+</div>
+
+<!-- Modal ver1 addProduct -->
+
+<div class="modal" id="addColor">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h3 class="modal-title text-center">Nuevo Color</h3>
+      </div>
+      <div class="modal-body">
+        <form id="nColor" class="form-horizontal form-label-left" ng-submit="saveColor()">
+          <div class="form-group">
+            <label class="col-xs-4" for="codeColor">Codigo:</label>
+            <div class="col-xs-8">
+                <input ng-model="codeColor" class="form-control" type="text" required="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-xs-4" for="nameColor">Color:</label>
+            <div class="col-xs-8">
+              <input ng-model="nameColor" class="form-control" type="text" required="required">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success ladda-button"
+          ladda="submitting"
+          data-style="expand-right"
+          data-spinner-size="20"
+          type="submit"
+          form="nColor">Guardar
+       </button>
+        <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+
+      </div>
+    </div>
+  </div>
+</div>

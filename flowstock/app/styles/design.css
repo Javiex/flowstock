@@ -2,13 +2,47 @@
   padding: 0px;
 }
 
+div.header {
+  display: flex;
+  height: 70px;
+  margin-bottom: 0px;
+  background-color: #0f4573;
+  border: 0px;
+}
+
+div.header h1 {
+  color: #FFF;
+}
+
+.menu-principal {
+  width: 170px !important;
+}
+
+.cuerpo-principal {
+  width: calc(100% - 170px) !important;
+  padding-top: 15px;
+}
+
 .navbar-default {
   background-color: #222;
   /*background-color: lightblue;*/
 }
 
+ul.nav-second-level {
+  background-color: #0f4573;
+}
+
 #side-menu a {
   color: #fff;
+}
+
+#side-menu > li > a {
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+ul.nav-second-level > li > a {
+  padding-left: 30px;
 }
 
 #side-menu li a:hover, #side-menu li a:focus {

@@ -36,6 +36,12 @@
         templateUrl: 'views/productCreate.html',
         controller: 'ProductCtrl',
         controllerAs: 'productCreate'
+      })
+      .state('color', {
+        url:'/color',
+        templateUrl:'views/colorList.html',
+        controller: 'ColorCtrl',
+        controllerAs: 'color'
       });
 
   });

@@ -47,10 +47,10 @@ $app->post("/product", function() use($app){
 });
 
 /*$app->get("/products", function() use($app){
-	$oProductos= new Product();
-	$search = '1';
-	$response= $oProductos->getProductByElemento($search);
-	response($response);
+$oProductos= new Product();
+$search = '1';
+$response= $oProductos->getProductByElemento($search);
+response($response);
 });*/
 
 $app->get("/lines", function() use($app){
@@ -105,6 +105,22 @@ $app->get("/colors", function() use($app){
 	$oColor = new Color();
 	$response = $oColor->getColors();
 	echoResponse($response);
+});
+
+$app->post("/color", function() use($app){
+	try {
+		$oColor = new Color();
+		$todo = $app->request->getBody();
+		$todo = json_decode($todo);
+
+		$codeColor = $todo->code;
+		$nameColor = $todo->name;
+		$oColor->setColor($codeColor, $nameColor);
+
+	} catch (Exception $e) {
+		echoResponse($e->getMessage());
+	}
+
 });
 
 $app->post("/productDetail", function() use($app){

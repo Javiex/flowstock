@@ -26,39 +26,14 @@
 
   <!-- Add your site or application content here -->
   <div class="header">
-    <div class="navbar navbar-default" role="navigation">
-      <div class="wrapper-header col-xs-12">
-        <div class="navbar-header">
-
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <a class="navbar-brand" ui-sref="init">
-            <!-- <img src="images/tarjeta.png" alt="I'm Javier"><br> -->
-          </a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-          <ul class="nav navbar-nav">
-            <li class="active"><a ui-sref="init">Home</a></li>
-            <li><a ui-sref="about">About</a></li>
-            <li><a ui-sref="init">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <h1>Sistema FlowStock</h1>
   </div>
 
   <div class="wrapper-body col-xs-12 noPad">
-    <div class="col-xs-12 col-sm-2 noPad">
+    <div class="menu-principal col-xs-12 col-sm-2 noPad">
       <main-menu></main-menu>
     </div>
-    <div class="col-xs-12 col-sm-10" role="main">
+    <div class="cuerpo-principal col-xs-12 col-sm-10" role="main">
       <div ui-view></div>
     </div>
   </div>
@@ -110,6 +85,7 @@
   <script src="scripts/factories/product.js"></script>
   <script  src="scripts/controllers/main.js"></script>
   <script src="scripts/controllers/about.js"></script>
+  <script src="scripts/controllers/color.js"></script>
   <script src="scripts/controllers/product.js"></script>
   <!-- endbuild -->
 </body>

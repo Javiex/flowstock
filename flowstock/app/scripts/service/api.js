@@ -58,5 +58,9 @@
         return this.api_url() + '/colors';
       };
 
+      this.addColor = function() {
+        return this.api_url() + '/color';
+      };
+
     });
 }());
