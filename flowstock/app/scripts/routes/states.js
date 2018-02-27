@@ -42,6 +42,11 @@
         templateUrl:'views/colorList.html',
         controller: 'ColorCtrl',
         controllerAs: 'color'
+      }).state('category', {
+        url: '/category',
+        templateUrl: 'views/category.html',
+        controller: 'lineCtrl',
+        controllerAs: 'line'
       });
 
   });

@@ -62,5 +62,9 @@
         return this.api_url() + '/color';
       };
 
+      this.addLine = function() {
+        return this.api_url() + '/line';
+      };
+
     });
 }());

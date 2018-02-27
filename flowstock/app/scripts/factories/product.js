@@ -125,6 +125,14 @@
         return {error:res.status};
       });
     };
+    Product.addLine = function(params){
+      var url = sApi.addLine();
+      return $http.post( url, params ).then(function(res){
+        return res.data;
+      }, function(res){
+        return {error:res.status};
+      });
+    };
 
     return Product;
   });
